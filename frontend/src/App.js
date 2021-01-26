@@ -2,6 +2,7 @@ import React from 'react';
 import Footer from './components/Footer';
 import Header from './components/Header';
 import { Container } from 'react-bootstrap';
+import HomeScreen from './sceens/HomeScreen';
 
 function App() {
   return (
@@ -9,7 +10,7 @@ function App() {
       <Header />
       <main>
         <Container>
-          <h1>Welcome to Flex Mart</h1>
+          <HomeScreen />
         </Container>
       </main>
       <Footer />
