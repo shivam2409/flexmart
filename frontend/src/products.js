@@ -9,7 +9,7 @@ const products = [
     catagory: 'Electronics',
     price: 889.99,
     countInStock: 3,
-    rating: 4.5,
+    rating: 2.5,
     numReviews: 4,
   },
   {
@@ -21,7 +21,7 @@ const products = [
     catagory: 'Electronics',
     price: 889.99,
     countInStock: 3,
-    rating: 4.5,
+    rating: 3.5,
     numReviews: 4,
   },
   {
@@ -33,7 +33,7 @@ const products = [
     catagory: 'Electronics',
     price: 889.99,
     countInStock: 3,
-    rating: 4.5,
+    rating: 5,
     numReviews: 4,
   },
 ];
