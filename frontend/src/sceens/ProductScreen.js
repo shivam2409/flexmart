@@ -6,7 +6,7 @@ import Rating from '../components/Rating';
 // import products from '../products';
 
 const ProductScreen = ({ match }) => {
-  const [product, setProduct] = useState([]);
+  const [product, setProduct] = useState({});
 
   useEffect(() => {
     const fetchProduct = async () => {
@@ -14,7 +14,7 @@ const ProductScreen = ({ match }) => {
       setProduct(data);
     };
     fetchProduct();
-  }, []);
+  }, [match]);
 
   return (
     <>
