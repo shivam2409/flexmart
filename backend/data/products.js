@@ -1,6 +1,5 @@
 const products = [
   {
-    _id: '1',
     name: 'iPhone',
     image: '/img/iphone.jpg',
 
@@ -13,7 +12,6 @@ const products = [
     numReviews: 4,
   },
   {
-    _id: '2',
     name: 'iPhone',
     image: '/img/iphone.jpg',
     description: 'Apples most latest product',
@@ -25,7 +23,6 @@ const products = [
     numReviews: 4,
   },
   {
-    _id: '3',
     name: 'iPhone',
     image: '/img/iphone.jpg',
     description: 'Apples most latest product',
