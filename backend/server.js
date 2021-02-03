@@ -1,8 +1,8 @@
 import express from 'express';
 import colors from 'colors';
-import products from './data/products.js';
 import dotenv from 'dotenv';
 import connectDB from './config/db.js';
+import productRoutes from './routes/productRoutes';
 
 dotenv.config();
 
@@ -13,14 +13,7 @@ app.get('/', (req, res) => {
   res.send('API is running......');
 });
 
-app.get('/products', (req, res) => {
-  res.json(products);
-});
-
-app.get('/products/:id', (req, res) => {
-  const product = products.find((p) => p._id === req.params.id);
-  res.json(product);
-});
+app.use('/api/products', productRoutes);
 
 const PORT = process.env.PORT || 5000;
 
