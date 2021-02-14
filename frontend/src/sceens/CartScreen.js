@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { Row } from 'react-bootstrap';
 import { useDispatch } from 'react-redux';
 import { addToCart } from '../actions/cartActions';
 
@@ -16,7 +17,15 @@ const CartScreen = ({ match, location, history }) => {
     }
   }, [dispatch, productId, qty]);
 
-  return <div>Cart</div>;
+  return (
+    <Row>
+      <Col md={8}>
+        <h1>Shopping Cart</h1>
+      </Col>
+      <Col md={2}></Col>
+      <Col md={2}></Col>
+    </Row>
+  );
 };
 
 export default CartScreen;
