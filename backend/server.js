@@ -1,13 +1,13 @@
 import express from 'express';
-import colors from 'colors';
 import dotenv from 'dotenv';
 import connectDB from './config/db.js';
-import productRoutes from './routes/productRoutes';
-import { notFound, errorHandler } from './middleware/errorMiddleware';
-import userRoutes from './routes/userRoutes';
+import productRoutes from './routes/productRoutes.js';
+import { notFound, errorHandler } from './middleware/errorMiddleware.js';
+import userRoutes from './routes/userRoutes.js';
 
 dotenv.config();
 
+//Connecting to databse
 connectDB();
 
 const app = express();

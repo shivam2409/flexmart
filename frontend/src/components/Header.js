@@ -5,7 +5,7 @@ import { Nav, Container, Navbar } from 'react-bootstrap';
 const Header = () => {
   return (
     <header>
-      <Navbar className='navbar-dark bg-dark' expand='lg'>
+      <Navbar className='navbar-dark bg-dark ' expand='lg'>
         <Container>
           <LinkContainer to='/'>
             <Navbar.Brand>FLEXMART</Navbar.Brand>
