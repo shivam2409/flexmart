@@ -16,7 +16,7 @@ import Message from '../components/Message';
 import Rating from '../components/Rating';
 
 const ProductScreen = ({ history, match }) => {
-  const [qty, setQty] = useState(1);
+  const [qty, setQty] = useState(0);
 
   const dispatch = useDispatch();
 
@@ -44,7 +44,7 @@ const ProductScreen = ({ history, match }) => {
       ) : (
         <Row>
           <Col md={6}>
-            <Image src={product.image} alt={product.name} />
+            <Image src={product.image} alt={product.name} fluid />
           </Col>
           <Col md={3}>
             <ListGroup variant='flush'>
@@ -80,7 +80,6 @@ const ProductScreen = ({ history, match }) => {
                     </Col>
                   </Row>
                 </ListGroup.Item>
-
                 {product.countInStock > 0 && (
                   <ListGroup.Item>
                     <Row>
@@ -91,7 +90,7 @@ const ProductScreen = ({ history, match }) => {
                           value={qty}
                           onChange={(e) => setQty(e.target.value)}
                         >
-                          {[...Array(product.countInStock).key()].map((x) => (
+                          {[...Array(product.countInStock).keys()].map((x) => (
                             <option key={x + 1} value={x + 1}>
                               {x + 1}
                             </option>
