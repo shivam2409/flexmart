@@ -15,12 +15,15 @@ import Message from '../components/Message';
 
 const CartScreen = ({ match, location, history }) => {
   const productId = match.params.id;
+
   const qty = location.search ? Number(location.search.split('=')[1]) : 1;
 
   const dispatch = useDispatch();
+
   const cart = useSelector((state) => state.cart);
 
   const { cartItems } = cart;
+
   useEffect(() => {
     if (productId) {
       dispatch(addToCart(productId, qty));
@@ -69,7 +72,7 @@ const CartScreen = ({ match, location, history }) => {
                         )
                       }
                     >
-                      {[...Array(item.countInStock).key()].map((x) => (
+                      {[...Array(item.countInStock).keys()].map((x) => (
                         <option key={x + 1} value={x + 1}>
                           {x + 1}
                         </option>
@@ -107,7 +110,7 @@ const CartScreen = ({ match, location, history }) => {
             <ListGroup.Item>
               <Button
                 type='button '
-                className='btn-block '
+                className='btn-block'
                 disabled={cartItems === 0}
                 onClick={checkOutHandler}
               >
