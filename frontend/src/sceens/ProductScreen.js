@@ -16,7 +16,7 @@ import Message from '../components/Message';
 import Rating from '../components/Rating';
 
 const ProductScreen = ({ history, match }) => {
-  const [qty, setQty] = useState(0);
+  const [qty, setQty] = useState(1);
 
   const dispatch = useDispatch();
 
@@ -43,8 +43,8 @@ const ProductScreen = ({ history, match }) => {
         <Message varient='danger'>{error}</Message>
       ) : (
         <Row>
-          <Col md={6}>
-            <Image src={product.image} alt={product.name} fluid />
+          <Col md={4}>
+            <Image fluid rounded src={product.image} alt={product.name} />
           </Col>
           <Col md={3}>
             <ListGroup variant='flush'>
