@@ -25,7 +25,6 @@ const products = [
   },
   {
     _id: '3',
-
     name: 'iMac',
     image: '/img/iphone.jpg',
     description: 'Apples most latest product',
@@ -38,7 +37,6 @@ const products = [
   },
   {
     _id: '4',
-
     name: 'iWatch',
     image: '/img/iphone.jpg',
     description: 'Apples most latest product',
@@ -51,7 +49,6 @@ const products = [
   },
   {
     _id: '5',
-
     name: 'Airpods',
     image: '/img/iphone.jpg',
     description: 'Apples most latest product',
@@ -64,7 +61,6 @@ const products = [
   },
   {
     _id: '6',
-
     name: 'iPad',
     image: '/img/iphone.jpg',
     description: 'Apples most latest product',
