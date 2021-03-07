@@ -12,7 +12,7 @@ const products = [
   },
   {
     name: 'Macbook',
-    image: '/img/airpod.jpg',
+    image: '/img/macbook.jpg',
     description: 'Apples most latest product',
     brand: 'apple',
     category: 'Electronics',
