@@ -3,7 +3,7 @@ import { Col, Form, Row, Button } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import { Loader } from '../components/Loader';
 import Message from '../components/Message';
-import { getUserDetails } from '../actions/userAction';
+import { getUserDetails, register } from '../actions/userAction';
 
 const ProfileScreen = ({ history }) => {
   const [name, setName] = useState('');
@@ -15,11 +15,9 @@ const ProfileScreen = ({ history }) => {
   const dispatch = useDispatch();
 
   const userDetails = useSelector((state) => state.userDetails);
-
   const { loading, error, user } = userDetails;
 
   const userLogin = useSelector((state) => state.userLogin);
-
   const { userInfo } = userLogin;
 
   useEffect(() => {
@@ -41,6 +39,7 @@ const ProfileScreen = ({ history }) => {
     if (password !== confirmPassword) {
       setMessage('Password do not match');
     } else {
+      dispatch(register(name, email, password));
     }
   };
 
