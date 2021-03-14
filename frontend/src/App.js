@@ -14,15 +14,14 @@ function App() {
   return (
     <Router>
       <Header />
-      <main>
+      <main className='py-3'>
         <Container>
           <Route path='/login' component={LoginScreen} />
-
           <Route path='/register' component={RegisterScreen} />
           <Route path='/profile' component={ProfileScreen} />
-          <Route path='/' exact component={HomeScreen} />
           <Route path='/product/:id' component={ProductScreen} />
           <Route path='/cart/:id?' component={CartScreen} />
+          <Route path='/' exact component={HomeScreen} />
         </Container>
       </main>
       <Footer />

@@ -38,18 +38,17 @@ const ProfileScreen = ({ history }) => {
 
   const submitHandler = (e) => {
     e.preventDefault();
-
     if (password !== confirmPassword) {
       setMessage('Password do not match');
     } else {
-      dispatch(updateUserProfile({ id: user._id, email, password }));
+      dispatch(updateUserProfile({ id: user._id, name, email, password }));
     }
   };
 
   return (
     <Row>
       <Col md={3}>
-        <h1>User Profile</h1>
+        <h2>User Profile</h2>
         {message && <Message variant='danger'>{message}</Message>}
         {error && <Message variant='danger'>{error}</Message>}
         {success && <Message variant='success'>{success}</Message>}
