@@ -60,7 +60,6 @@ const RegisterScreen = ({ location, history }) => {
             ></Form.Control>
           </Form.Label>
         </Form.Group>
-
         <Form.Group controlId='email'>
           <Form.Label>
             Email Address
