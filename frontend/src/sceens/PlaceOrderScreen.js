@@ -6,7 +6,7 @@ import { createOrder } from '../actions/orderActions';
 import Message from '../components/Message';
 import CheckoutSteps from './CheckoutSteps';
 
-const PlaceOrderScreen = (history) => {
+const PlaceOrderScreen = ({ history }) => {
   const dispatch = useDispatch();
 
   const cart = useSelector((state) => state.cart);

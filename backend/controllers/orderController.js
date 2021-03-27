@@ -6,6 +6,7 @@ import Order from '../models/orderModel.js';
 // @access Public
 
 const addOrderItems = asyncHandler(async (req, res) => {
+  //Getting data from frontend fields
   const {
     orderItems,
     shippingAddress,
@@ -15,10 +16,15 @@ const addOrderItems = asyncHandler(async (req, res) => {
     shippingPrice,
     totalPrice,
   } = req.body;
+
+  //check if data is there or fileds are not empty
+
   if (orderItems && orderItems.length === 0) {
     res.status(400);
     throw new Error('No order items');
     return;
+
+    //Creating new order
   } else {
     const order = new Order({
       orderItems,
@@ -30,10 +36,29 @@ const addOrderItems = asyncHandler(async (req, res) => {
       shippingPrice,
       totalPrice,
     });
+
+    //Saving order sending promise
     const createdOrder = await order.save();
 
     res.status(201).json(createdOrder);
   }
 });
 
-export { addOrderItems };
+// @des Get Order by ID
+// @route GET /api/orders/:id
+// @access Private
+
+const getOrderById = asyncHandler(async (req, res) => {
+  const order = await Order.findById(req.params.id).populate(
+    'user',
+    'name email'
+  );
+  if (order) {
+    res.json(order);
+  } else {
+    res.status(404);
+    throw new Error('Order not found');
+  }
+});
+
+export { addOrderItems, getOrderById };
