@@ -47,7 +47,7 @@ const ProductScreen = ({ history, match }) => {
             <Image fluid rounded src={product.image} alt={product.name} />
           </Col>
           <Col md={3}>
-            <ListGroup variant='flush'>
+            <ListGroup varient='flush'>
               <ListGroup.Item>
                 <h4>{product.name}</h4>
               </ListGroup.Item>
@@ -63,7 +63,7 @@ const ProductScreen = ({ history, match }) => {
           </Col>
           <Col md={3}>
             <Card>
-              <ListGroup variant='flush'>
+              <ListGroup varient='flush'>
                 <ListGroup.Item>
                   <Row>
                     <Col>Price:</Col>

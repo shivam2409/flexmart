@@ -49,9 +49,9 @@ const ProfileScreen = ({ history }) => {
     <Row>
       <Col md={3}>
         <h2>User Profile</h2>
-        {message && <Message variant='danger'>{message}</Message>}
-        {error && <Message variant='danger'>{error}</Message>}
-        {success && <Message variant='success'>{success}</Message>}
+        {message && <Message varient='danger'>{message}</Message>}
+        {error && <Message varient='danger'>{error}</Message>}
+        {success && <Message varient='success'>{success}</Message>}
         {loading && <Loader />}
         <Form onSubmit={submitHandler}>
           <Form.Group controlId='name'>
@@ -100,7 +100,7 @@ const ProfileScreen = ({ history }) => {
               ></Form.Control>
             </Form.Label>
           </Form.Group>
-          <Button type='submit' variant='primary'>
+          <Button type='submit' varient='primary'>
             Update
           </Button>
         </Form>

@@ -34,7 +34,7 @@ const LoginScreen = ({ location, history }) => {
   return (
     <FormContainer>
       <h1>Sign In</h1>
-      {error && <Message variant='danger'>{error}</Message>}
+      {error && <Message varient='danger'>{error}</Message>}
       {loading && <Loader />}
       <Form onSubmit={submitHandler}>
         <Form.Group controlId='email'>
@@ -59,7 +59,7 @@ const LoginScreen = ({ location, history }) => {
             ></Form.Control>
           </Form.Label>
         </Form.Group>
-        <Button type='submit' variant='primary'>
+        <Button type='submit' varient='primary'>
           Sign In
         </Button>
       </Form>
