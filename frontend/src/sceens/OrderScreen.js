@@ -25,7 +25,7 @@ const OrderScreen = ({ match }) => {
   //do somthing after render
   useEffect(() => {
     dispatch(getOrderDetails(orderId));
-  }, []);
+  }, [dispatch, orderId]);
 
   return loading ? (
     <Loader />
