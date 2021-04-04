@@ -7,6 +7,7 @@ import {
   ORDER_DETAILS_SUCCESS,
   ORDER_PAY_FAIL,
   ORDER_PAY_REQUEST,
+  ORDER_PAY_RESET,
   ORDER_PAY_SUCCESS,
 } from '../constants/orderConstant';
 
@@ -76,7 +77,7 @@ export const orderPayReducer = (state = {}, action) => {
         loading: false,
         error: action.payload,
       };
-    case ORDER_PAY_REQUEST:
+    case ORDER_PAY_RESET:
       return {};
     default:
       return state;
