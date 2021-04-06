@@ -175,13 +175,10 @@ const OrderScreen = ({ match }) => {
                     <PayPalButton
                       amount={order.totalPrice}
                       onSuccess={successPaymenthandler}
-                    />
+                    ></PayPalButton>
                   )}
                 </ListGroup.Item>
               )}
-              {/* <ListGroup.Item>
-                {error && <Message varient='danger'>{error}</Message>}
-              </ListGroup.Item> */}
             </ListGroup>
           </Card>
         </Col>
