@@ -25,11 +25,11 @@ function App() {
           <Route path='/profile' component={ProfileScreen} />
           <Route path='/product/:id' component={ProductScreen} />
           <Route path='/cart/:id?' component={CartScreen} />
-          <Route path='/' exact component={HomeScreen} />
           <Route path='/shipping' exact component={ShippingScreen} />
           <Route path='/payment' exact component={PaymentScreen} />
           <Route path='/placeorder' exact component={PlaceOrderScreen} />
           <Route path='/order/:id' exact component={OrderScreen} />
+          <Route path='/' exact component={HomeScreen} />
         </Container>
       </main>
       <Footer />

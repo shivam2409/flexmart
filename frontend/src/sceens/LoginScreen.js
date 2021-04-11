@@ -3,7 +3,6 @@ import { Col, Form, Row, Button } from 'react-bootstrap';
 import FormContainer from '../components/FormContainer';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { Loader } from '../components/Loader';
 import Message from '../components/Message';
 import { login } from '../actions/userAction';
 
@@ -16,7 +15,7 @@ const LoginScreen = ({ location, history }) => {
 
   const userLogin = useSelector((state) => state.userLogin);
 
-  const { loading, error, userInfo } = userLogin;
+  const { error, userInfo } = userLogin;
 
   const redirect = location.search ? location.search.split('=')[1] : '/';
 
@@ -30,12 +29,11 @@ const LoginScreen = ({ location, history }) => {
     e.preventDefault();
     dispatch(login(email, password));
   };
-
   return (
     <FormContainer>
       <h1>Sign In</h1>
       {error && <Message varient='danger'>{error}</Message>}
-      {loading && <Loader />}
+
       <Form onSubmit={submitHandler}>
         <Form.Group controlId='email'>
           <Form.Label>

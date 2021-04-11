@@ -4,10 +4,10 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { Loader } from '../components/Loader';
 import Message from '../components/Message';
-import { getOrderDetails, payOrder } from '../actions/orderActions';
-import { PayPalButton } from 'react-paypal-button-v2';
 import axios from 'axios';
+import { PayPalButton } from 'react-paypal-button-v2';
 import { ORDER_PAY_RESET } from '../constants/orderConstant';
+import { getOrderDetails, payOrder } from '../actions/orderActions';
 
 const OrderScreen = ({ match }) => {
   //getting id from frontend link and matching
@@ -19,7 +19,6 @@ const OrderScreen = ({ match }) => {
 
   //Getting somthing from state using useSelector
   const orderDetails = useSelector((state) => state.orderDetails);
-
   //Destructuring state
   const { order, loading, error } = orderDetails;
 
@@ -35,8 +34,7 @@ const OrderScreen = ({ match }) => {
   //do somthing after render
   useEffect(() => {
     const addPayPalScript = async () => {
-      const { data: clientId } = await axios.get('/api/config/paypal');
-
+      const { data: clientId } = await axios.get('api/config/paypal');
       const script = document.createElement('script');
       script.type = 'text/javascript';
       script.src = `https://www.paypal.com/sdk/js?client-id=${clientId}`;
@@ -59,7 +57,7 @@ const OrderScreen = ({ match }) => {
     }
   }, [dispatch, orderId, successPay, order]);
 
-  const successPaymenthandler = (paymentResult) => {
+  const successPaymentHandler = (paymentResult) => {
     console.log(paymentResult);
     dispatch(payOrder(orderId, paymentResult));
   };
@@ -159,7 +157,6 @@ const OrderScreen = ({ match }) => {
                   <Col>${order.taxPrice}</Col>
                 </Row>
               </ListGroup.Item>
-
               <ListGroup.Item>
                 <Row>
                   <Col>Total</Col>
@@ -174,8 +171,8 @@ const OrderScreen = ({ match }) => {
                   ) : (
                     <PayPalButton
                       amount={order.totalPrice}
-                      onSuccess={successPaymenthandler}
-                    ></PayPalButton>
+                      onSuccess={successPaymentHandler}
+                    />
                   )}
                 </ListGroup.Item>
               )}

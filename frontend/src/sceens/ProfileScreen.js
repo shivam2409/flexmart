@@ -26,7 +26,7 @@ const ProfileScreen = ({ history }) => {
   const { success } = userUpdateProfile;
 
   const orderMyList = useSelector((state) => state.orderMyList);
-  const { loading: loadingOrders, error: errororders, orders } = orderMyList;
+  const { loading: loadingOrders, error: errorOrders, orders } = orderMyList;
 
   useEffect(() => {
     if (!userInfo) {
@@ -115,8 +115,8 @@ const ProfileScreen = ({ history }) => {
         <h2>My Orders</h2>
         {loadingOrders ? (
           <Loader />
-        ) : errororders ? (
-          <Message varient='danger'>{errororders}</Message>
+        ) : errorOrders ? (
+          <Message varient='danger'>{errorOrders}</Message>
         ) : (
           <Table striped bordered hover responsive className='table-sm'>
             <thead>
