@@ -17,7 +17,7 @@ const UserListScreen = () => {
   }, [dispatch]);
 
   const deleteHander = (id) => {
-    console.log('DElete');
+    console.log('Delete');
   };
 
   return (
@@ -28,7 +28,13 @@ const UserListScreen = () => {
       ) : error ? (
         <Message varient='danger'>{error}</Message>
       ) : (
-        <Table striped borderd hover responsive className='table-sm'>
+        <Table
+          striped
+          table-bordered
+          table-hover
+          table-responsive
+          className='table-sm'
+        >
           <thead>
             <tr>
               <th>ID</th>
@@ -40,15 +46,15 @@ const UserListScreen = () => {
           </thead>
           <tbody>
             {users.map((user) => (
-              <tr key={users._id}>
-                <td>{users._id}</td>
-                <td>{users.name}</td>
+              <tr key={user._id}>
+                <td>{user._id}</td>
+                <td>{user.name}</td>
                 <td>
                   <i href={`mailto:${user.email}`}></i>
-                  {users.email}
+                  {user.email}
                 </td>
                 <td>
-                  {user.idAdmin ? (
+                  {user.isAdmin ? (
                     <i className='fas fa-check' style={{ color: 'green' }}></i>
                   ) : (
                     <i className='fas fa-times' style={{ color: 'red' }}></i>
@@ -56,16 +62,16 @@ const UserListScreen = () => {
                 </td>
                 <td>
                   <LinkContainer to={`/user/${user._id}/edit`}>
-                    <button varient='light' className='btn-sm'>
-                      <i className='fas fa-edit'></i>
-                    </button>
+                    <Button varient='light' className='btn-sm'>
+                      <i className='far fa-edit'> </i>
+                    </Button>
                   </LinkContainer>
                   <Button
                     varient='danger'
                     className='btn-sm'
                     onClick={() => deleteHander(user._id)}
                   >
-                    <i className='fa fas-trash'></i>
+                    <i className='fas fa-trash'></i>
                   </Button>
                 </td>
               </tr>

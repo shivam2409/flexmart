@@ -7,6 +7,7 @@ import {
   USER_DETAILS_SUCCESS,
   USER_LIST_FAIL,
   USER_LIST_REQUEST,
+  USER_LIST_SUCCESS,
   USER_LOGIN_FAIL,
   USER_LOGIN_REQUEST,
   USER_LOGIN_SUCCESS,
@@ -183,10 +184,10 @@ export const listUsers = () => async (dispatch, getState) => {
         Authorization: `Bearer ${userInfo.token}`,
       },
     };
-    const { data } = await axios.get(`/api/users `, config);
+    const { data } = await axios.get(`/api/users`, config);
 
     dispatch({
-      type: USER_LOGIN_SUCCESS,
+      type: USER_LIST_SUCCESS,
       payload: data,
     });
   } catch (error) {
